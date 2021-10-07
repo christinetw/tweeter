@@ -43,17 +43,35 @@ const createTweetElement = function (tweet) {
 
 $(document).ready(function () {
 
+  // Take over submit form event
   $("form").submit(function (e) {
     e.preventDefault(e);
+
+    // Validate tweet not empty
+    let tweetText = $('#textInput').val();
+    if (tweetText.length === 0) {
+      alert("Tweet is empty!");
+      return;
+    }
+
+    // Validate tweet not too long
+    if (tweetText.length > 140) {
+      alert("Tweets must be 140 characters or less!");
+      return;
+    }
+
+
+    // Transform form data
     const formData = $(this).serialize();
 
     // Post data using Ajax
     $.ajax('/tweets', { method: 'POST', data: formData })
       .then(function (morePostsHtml) {
-        $button.replaceWith(morePostsHtml);
+        loadtweets();
       });
   });
 
+  // Get tweets from server, then render
   const loadtweets = function () {
     $.ajax('/tweets', { method: 'GET' })
       .then(function (myData) {
