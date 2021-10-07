@@ -1,0 +1,33 @@
+div #sumitbon{ 
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.tweet-text {
+    display: flex;
+    justify-self: end;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid black;
+    background-color: #f4f1ec;
+    width:100%;
+}
+
+.button {
+  background-color: #4056A1;; /* Green */
+  border: none;
+  color: white;
+  padding: 10px ;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-family: 'Bungee', sans-serif;  
+}
+
+.counterBlack {
+  color: black;
+}
+.counterRed {
+  color: red;
+}

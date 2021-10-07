@@ -1,0 +1,42 @@
+
+.tweet-container {
+  display:flex;
+  flex-direction: column;
+}
+
+.tweet-post {
+  display:flex;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin: 20px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.tweet-post > h1 {
+  font-size: 30px;
+}
+
+.tweet-post > p {
+  font-size: 24px;
+  color: salmon;
+}
+
+.tweet-icons > i {
+  display:flex;
+  align-items: flex-end;
+}
+
+.tweet-icons {
+  display:flex;
+  flex-direction: row;
+}
+
+i:hover{
+  color: red;
+}
+
+.tweet-info > h1 {
+  display: inline;
+}
