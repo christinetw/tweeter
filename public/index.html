@@ -77,9 +77,9 @@
     <main class="mainContainer">
       <section class="new-tweet">
         <br>
-        <form name="text" action="/tweets" method="POST">
+        <form id="tweetForm" name="tweetForm" action="/tweets" method="POST">
           What are you humming about?
-          <textarea name="text" id="textInput" class="tweet-text"></textarea>
+          <textarea name="data" id="textInput" class="tweet-text"></textarea>
           <br>
           <div id="sumitbon">
             <button class="button" type="submit">Tweet</button>
@@ -93,10 +93,6 @@
     </main>
     <div class="mainSide"></div>
   </div>
-
-  <script>
-    renderTweets(data);</script>
   <br><br><br>
 </body>
-
 </html>

@@ -67,3 +67,18 @@ const createTweetElement = function (tweet) {
   return $tweet;
 }
 
+$(document).ready(function () {
+  renderTweets(data);
+  
+  $("form").submit(function (e) {
+    e.preventDefault(e);
+    const formData = $(this).serialize();
+
+    // Post data using Ajax
+    $.ajax('/tweets', { method: 'POST', data: formData })
+      .then(function (morePostsHtml) {
+        console.log('Success: ', morePostsHtml);
+        $button.replaceWith(morePostsHtml);
+      });
+  });
+});
