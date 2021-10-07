@@ -40,3 +40,10 @@ i:hover{
 .tweet-info > h1 {
   display: inline;
 }
+
+.errorMsg {
+  display: flex;
+  color: red;
+  margin: 10px;
+  display: none;
+}

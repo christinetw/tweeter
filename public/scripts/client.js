@@ -41,6 +41,19 @@ const createTweetElement = function (tweet) {
   return $tweet;
 }
 
+// Show an error message to the user
+const showError = function(errorMsg) {
+  $("#errorBox").text(errorMsg);
+  $("#errorBox").slideDown(500);
+}
+
+// Hide and clear the error message
+const clearError = function() {
+  $("#errorBox").text('');
+  $("#errorBox").slideUp(500);
+}
+
+// Set things up on page load
 $(document).ready(function () {
 
   // Take over submit form event
@@ -50,23 +63,27 @@ $(document).ready(function () {
     // Validate tweet not empty
     let tweetText = $('#textInput').val();
     if (tweetText.length === 0) {
-      alert("Tweet is empty!");
+      showError("Tweet is empty!");
       return;
     }
 
     // Validate tweet not too long
     if (tweetText.length > 140) {
-      alert("Tweets must be 140 characters or less!");
+      showError("Tweets must be 140 characters or less!");
       return;
     }
 
-
+    // Validated, so clear error
+    clearError();
+  
     // Transform form data
     const formData = $(this).serialize();
 
     // Post data using Ajax
     $.ajax('/tweets', { method: 'POST', data: formData })
       .then(function (morePostsHtml) {
+        // Success post so clear text input and load tweets
+        $('#textInput').val('');
         loadtweets();
       });
   });
