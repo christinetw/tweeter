@@ -1,7 +1,7 @@
+/* eslint-env jquery */
 
-let xTriggered = 0;
-$(document).ready(function () {
-  $("#textInput").on("keyup", function () {
+$(document).ready(function() {
+  $("#textInput").on("keyup", function() {
     // Calculate chars left
     let textLength = $(this).val().length;
     let charsLeft = 140 - textLength;

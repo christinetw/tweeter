@@ -3,9 +3,10 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+/* eslint-env jquery */
 
 // Render all the tweets we know about
-const renderTweets = function (tweets) {
+const renderTweets = function(tweets) {
   const $Container = $(".tweet-container");
   $Container.empty();
 
@@ -18,10 +19,10 @@ const renderTweets = function (tweets) {
     // takes return value and appends it to the tweets container
     $Container.prepend($tweet);
   }
-}
+};
 
 // Create our tweet post element
-const createTweetElement = function (tweet) {
+const createTweetElement = function(tweet) {
   let time = timeago.format(tweet.created_at);
   const $tweet = `
         <article class="tweet-post">
@@ -44,25 +45,25 @@ const createTweetElement = function (tweet) {
       </article>`;
 
   return $tweet;
-}
+};
 
 // Show an error message to the user
-const showError = function (errorMsg) {
+const showError = function(errorMsg) {
   $("#errorBox").text(errorMsg);
   $("#errorBox").slideDown(500);
-}
+};
 
 // Hide and clear the error message
-const clearError = function () {
+const clearError = function() {
   $("#errorBox").text('');
   $("#errorBox").slideUp(500);
-}
+};
 
 // Set things up on page load
-$(document).ready(function () {
+$(document).ready(function() {
 
   // Take over submit form event
-  $("form").submit(function (e) {
+  $("form").submit(function(e) {
     e.preventDefault(e);
 
     // Validate tweet not empty
@@ -86,7 +87,7 @@ $(document).ready(function () {
 
     // Post data using Ajax
     $.ajax('/tweets', { method: 'POST', data: formData })
-      .then(function (morePostsHtml) {
+      .then(function(morePostsHtml) {
 
         // Success post so clear text input and load tweets
         $('#textInput').val('');
@@ -100,10 +101,9 @@ $(document).ready(function () {
   });
 
   // Get tweets from server, then render
-  const loadtweets = function () {
+  const loadtweets = function() {
     $.ajax('/tweets', { method: 'GET' })
-      .then(function (myData) {
-        console.log(myData);
+      .then(function(myData) {
         renderTweets(myData);
       });
   };
