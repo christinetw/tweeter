@@ -7,7 +7,7 @@ $(document).ready(function () {
     let charsLeft = 140 - textLength;
 
     // Set new counter value
-    let counterElem = $(this).parent().find('output');
+    let counterElem = $("#counter");
     counterElem.text(charsLeft);
 
     // Change color to red if less than 0, black otherwise

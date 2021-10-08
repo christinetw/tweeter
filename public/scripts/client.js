@@ -43,13 +43,13 @@ const createTweetElement = function (tweet) {
 }
 
 // Show an error message to the user
-const showError = function(errorMsg) {
+const showError = function (errorMsg) {
   $("#errorBox").text(errorMsg);
   $("#errorBox").slideDown(500);
 }
 
 // Hide and clear the error message
-const clearError = function() {
+const clearError = function () {
   $("#errorBox").text('');
   $("#errorBox").slideUp(500);
 }
@@ -76,15 +76,21 @@ $(document).ready(function () {
 
     // Validated, so clear error
     clearError();
-  
+
     // Transform form data
     const formData = $(this).serialize();
 
     // Post data using Ajax
     $.ajax('/tweets', { method: 'POST', data: formData })
       .then(function (morePostsHtml) {
+
         // Success post so clear text input and load tweets
         $('#textInput').val('');
+
+        // Reset counter to 140
+        let counterElem = $("#counter");
+        counterElem.text("140");
+
         loadtweets();
       });
   });
@@ -93,6 +99,7 @@ $(document).ready(function () {
   const loadtweets = function () {
     $.ajax('/tweets', { method: 'GET' })
       .then(function (myData) {
+        console.log(myData);
         renderTweets(myData);
       });
   };
