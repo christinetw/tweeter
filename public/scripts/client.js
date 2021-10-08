@@ -22,20 +22,24 @@ const renderTweets = function (tweets) {
 
 // Create our tweet post element
 const createTweetElement = function (tweet) {
-  let time = timeago.format(tweet.content.created_at);
-  const $tweet = `  
+  let time = timeago.format(tweet.created_at);
+  const $tweet = `
         <article class="tweet-post">
           <div class="tweet-info">
             <img src="${tweet.user.avatars}"></i>
             <h1>${tweet.user.name}</h1>
-            <h3>${tweet.content.text}</h3>
-            <h6>${time}<h6>
+            <h2>${tweet.content.text}</h2>
+            <h4>${time}<h4>
           </div>
-          <div class="tweet-icons">
-            <i class="fas fa-flag"></i>
-            <i class="fas fa-retweet"></i>
-            <i class="far fa-heart"></i>
-            
+          <div class='tweet-right'>
+            <div class='tweet-handle'>
+            @moviestar
+            </div>
+            <div class="tweet-icons">
+              <i class="fas fa-flag"></i>
+              <i class="fas fa-retweet"></i>
+              <i class="far fa-heart"></i>           
+            </div>
           </div>
       </article>`;
 

@@ -28,9 +28,20 @@
   align-items: flex-end;
 }
 
+.tweet-right {
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .tweet-icons {
   display:flex;
   flex-direction: row;
+  justify-content: flex-end;
+}
+
+.tweet-handle {
+  display:flex;
 }
 
 i:hover{
