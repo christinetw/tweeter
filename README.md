@@ -9,7 +9,12 @@ Tweeter is a simple, single-page Twitter clone. Basic features include:
 
 ## Screenshots
 
+Desktop layout
+
 !["Screenshot of desktop layout"](https://github.com/christinetw/tweeter/blob/master/docs/desktop-layout.png)
+
+Mobile layout
+
 !["Screenshot of mobile layout"](https://github.com/christinetw/tweeter/blob/master/docs/mobile-layout.png?raw=true)
 
 ## Getting Started
