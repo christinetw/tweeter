@@ -35,6 +35,7 @@ const createTweetElement = function (tweet) {
             <i class="fas fa-flag"></i>
             <i class="fas fa-retweet"></i>
             <i class="far fa-heart"></i>
+            
           </div>
       </article>`;
 
@@ -98,3 +99,7 @@ $(document).ready(function () {
 
   loadtweets();
 });
+
+
+
+
