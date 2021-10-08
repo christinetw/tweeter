@@ -7,6 +7,11 @@ Tweeter is a simple, single-page Twitter clone. Basic features include:
 - Repsonsive UI for desktop, mobile
 - Tweet length validation and error messaging
 
+## Screenshots
+
+!["Screenshot of desktop layout"](https://github.com/christinetw/tweeter/blob/master/docs/desktop-layout.png)
+!["Screenshot of mobile layout"](https://github.com/christinetw/tweeter/blob/master/docs/mobile-layout.png?raw=true)
+
 ## Getting Started
 
 1. Fork this repository, then clone your fork of this repository.
